@@ -16,20 +16,37 @@ ret401k = 8500
 # - 401k Contribution, - Standard deduction - Personal Exception
 taxableIncome = (income - stdDeduction - perException - ret401k)
 
-if (taxableIncome < 9275 ):
+# 2016
+# if (taxableIncome < 9275 ):
+#     federalTax = taxableIncome * .1
+# elif (taxableIncome < 37650):
+#     federalTax = 927.50 + ((taxableIncome-9275) * .15)
+# elif(taxableIncome < 91150):
+#     federalTax = 5183.75 + ((taxableIncome-37650) * .25)
+# elif(taxableIncome < 190150):
+#     federalTax = 18558.75 + ((taxableIncome-91150) * .28)
+# elif(taxableIncome < 413350):
+#     federalTax = 46278.75 + ((taxableIncome-190150) * .33)
+# elif(taxableIncome < 415050):
+#     federalTax = 119934.75 + ((taxableIncome-413350) * .35)
+# elif(415051 < taxableIncome):
+#     federalTax = 120529.75 + ((taxableIncome-415050) * .396)
+
+# 2018
+if (taxableIncome < 19050 ):
     federalTax = taxableIncome * .1
-elif (taxableIncome < 37650):
-    federalTax = 927.50 + ((taxableIncome-9275) * .15)
-elif(taxableIncome < 91150):
-    federalTax = 5183.75 + ((taxableIncome-37650) * .25)
-elif(taxableIncome < 190150):
-    federalTax = 18558.75 + ((taxableIncome-91150) * .28)
-elif(taxableIncome < 413350):
-    federalTax = 46278.75 + ((taxableIncome-190150) * .33)
-elif(taxableIncome < 415050):
-    federalTax = 119934.75 + ((taxableIncome-413350) * .35)
-elif(415051 < taxableIncome):
-    federalTax = 120529.75 + ((taxableIncome-415050) * .396)
+elif (taxableIncome < 77,400):
+    federalTax = 1,905 + ((taxableIncome-9275) * .12)
+elif(taxableIncome < 165000):
+    federalTax = 8,907 + ((taxableIncome-37650) * .22)
+elif(taxableIncome < 315000):
+    federalTax = 28,179 + ((taxableIncome-91150) * .24)
+elif(taxableIncome < 400000):
+    federalTax = 64,179 + ((taxableIncome-190150) * .32)
+elif(taxableIncome < 600000):
+    federalTax = 91,379 + ((taxableIncome-413350) * .35)
+elif(600001 < taxableIncome):
+    federalTax = 161,379 + ((taxableIncome-415050) * .37)
 
 print("Income: ", income)
 print("taxable income: ", taxableIncome)
