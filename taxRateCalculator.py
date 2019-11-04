@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """taxRateCalculator.py  A program to calculate tax rate."""
 
+# Imports
+from prettytable import PrettyTable
+
+
 __author__      = "Adam Cook"
 __date__        = "1 November 2019"
 
@@ -47,6 +51,31 @@ elif(taxableIncome < 600000):
     federalTax = 91,379 + ((taxableIncome-413350) * .35)
 elif(600001 < taxableIncome):
     federalTax = 161,379 + ((taxableIncome-415050) * .37)
+
+
+##### Printing out table
+x = PrettyTable()
+
+x.field_names = ["Tax Rate %", "Taxable Income @ Rate $", "Federal Income Tax $"]
+
+income = 66000
+percentA = 10
+percentB = 12
+percentC = 22
+percentD = 24
+percentE = 32
+percentF = 25
+percentG = 37
+
+taxedIncomeA = income * percentA
+x.add_row([percentA, 9275, 9275*taxedIncomeA])
+x.add_row([percentB, income-37650, 9275*percentB])
+x.add_row([percentC, income, income - (income-37650)*percentC])
+
+x.add_row(["Total:","",""])
+
+print(x)
+
 
 print("Income: ", income)
 print("taxable income: ", taxableIncome)
