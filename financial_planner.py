@@ -156,11 +156,12 @@ x.field_names = ["Tax Source", "Tax %", "Amount Owed ($)"]
 # Making Amount Owed right aligned
 x.align["Amount Owed"] = "r"
 
+x.add_row(["Taxable Income","",taxableIncome])
 x.add_row(["FICA",round(FICATaxRate*100,5),FICATax])
 x.add_row(["Federal",federalTaxRate*100,federalTax])
-x.add_row(["State",stateTaxRate*100,round(stateTax,2)])
+x.add_row(["State",round(stateTaxRate*100,2),round(stateTax,2)])
 x.add_row(["Local",localTaxRate*100,round(localTax,2)])
-x.add_row(["Total","",round(totalTax,2)])
+x.add_row(["Total",round(totalTax/taxableIncome*100,2),round(totalTax,2)])
 
 print(x.get_string(title="Table 1, Tax Information"))
 

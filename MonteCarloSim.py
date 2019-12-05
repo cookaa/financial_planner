@@ -87,7 +87,7 @@ x=1
 Final_funds= []
 
 while x<=100:
-    ending_fund = play(10000,100,10)
+    ending_fund = play(10000,100,100)
     x = x+1
 
 
